@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+
+:root {
+  --bg-dark: #121212;
+  --bg-light: #f8f9fa;
+  --text-dark: #eaeaea;
+  --text-light: #202124;
+  --card-dark: #1e1e1e;
+  --card-light: white;
+  --accent: #4285F4;
+}
+
+body {
+  margin: 0;
+  font-family: 'Google Sans', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+}
+
+/* Light Theme */
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+}
+
+header {
+  background: inherit;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.animated-gradient {
+  background: linear-gradient(270deg, #EA4335, #4285F4, #9b51e0, #ff4f81);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  margin: 0 1rem;
+  color: inherit;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* About Section with Image */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1 1 400px;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .about-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* space between text and image */
+  align-items: flex-start; /* align tops of both sides */
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.about-text {
+  flex: 1 1 50%;
+}
+
+.about-image-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-image {
+  flex: 0 0 auto;
+}
+
+.about-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Section Styling */
+.section {
+  padding: 3rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.cert-card {
+  background: var(--card-dark);
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.2s, background 0.3s;
+}
+
+body.light .cert-card {
+  background: var(--card-light);
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+}
+
+.study-list {
+  list-style: none;
+}
+
+.study-list li {
+  padding: 0.5rem 0;
+}
+
+footer {
+  background: inherit;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+  color: var(--accent);
+}
+}
